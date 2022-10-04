@@ -1,0 +1,5 @@
+<tr *ngIf="histItem">
+  <td width="30%">De"{{(histItem.fromEurToUsd ? histItem.devise.eur : histItem.devise.dollar) | codeDevise | uppercase }}"
+                  à "{{(!histItem.fromEurToUsd ? histItem.devise.eur : histItem.devise.dollar) | codeDevise | uppercase}}"</td>
+  <td width="70%">Montant: {{histItem.amount}} (taux: {{histItem.rates}}) => res: {{histItem.result}}</td>
+</tr>

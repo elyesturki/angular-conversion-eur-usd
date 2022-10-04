@@ -1,0 +1,13 @@
+<div class="historique">
+  <p>les 5 dernières demandes :</p>
+  <table>
+    <tbody>
+      <app-historique-list-item
+      *ngFor="let histItem of historiqueDemandes"
+        [histItem]="histItem"
+        style="display: contents;"
+      >
+      </app-historique-list-item>
+    </tbody>
+  </table>
+</div>
