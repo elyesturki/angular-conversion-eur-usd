@@ -20,12 +20,12 @@ export class ExhangeRatesService {
     this.startVariableTaux()
   }
 
-  publishTauxEvent(taux: ITauxChangeActionEvent) {
-    this.sourceEventTauxChangeSubject.next(taux);
+  publishTauxEvent(action: ITauxChangeActionEvent) {
+    this.sourceEventTauxChangeSubject.next(action);
   }
 
   startVariableTaux() {
-    this.timerSubscription = timer(0, 3000).pipe(
+    this.timerSubscription = timer(0, this.timer).pipe(
       map(() => {
         this.radomValue = this.getRandomValue(-0.05, 0.05);
         let value = this.initExchangeRatesValue + this.radomValue;
@@ -43,5 +43,3 @@ export class ExhangeRatesService {
   }
 
 }
-
-//Math.round(value * 100) / 100
