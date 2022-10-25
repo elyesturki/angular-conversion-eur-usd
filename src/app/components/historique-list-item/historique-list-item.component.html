@@ -1,3 +1,4 @@
+{{check()}}
 <tr *ngIf="histItem">
   <td width="30%">De"{{(histItem.fromEurToUsd ? histItem.devise.eur : histItem.devise.dollar) | codeDevise | uppercase }}"
                   à "{{(!histItem.fromEurToUsd ? histItem.devise.eur : histItem.devise.dollar) | codeDevise | uppercase}}"</td>

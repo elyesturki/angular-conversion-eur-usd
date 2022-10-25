@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ReplaySubject, Subject} from 'rxjs';
+import { BehaviorSubject, ReplaySubject, Subject} from 'rxjs';
 import { HistoriqueDemande} from '../models/exchange-rates.model';
 
 @Injectable({
@@ -7,7 +7,8 @@ import { HistoriqueDemande} from '../models/exchange-rates.model';
 })
 export class HistoriqueDemandesService {
 
-  subjectHistoriqueDemande : Subject<HistoriqueDemande> = new ReplaySubject<HistoriqueDemande>();
+ subjectHistoriqueDemande : Subject<HistoriqueDemande> = new ReplaySubject<HistoriqueDemande>();
+// subjectHistoriqueDemande = new BehaviorSubject<HistoriqueDemande>(new HistoriqueDemande())
 
   constructor() {
 
